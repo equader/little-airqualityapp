@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Results</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Again, ensure the CSS path is correct -->
+</head>
+<body>
+    <h1>Air Quality Index (AQI) Results</h1>
+    <% if (aqiData) { %>
+        <div>
+            <h2>AQI for <%= aqiData.city %>: <%= aqiData.overall_aqi %></h2>
+            <!-- More detailed results here -->
+        </div>
+    <% } else { %>
+        <p>Sorry, no data available.</p>
+    <% } %>
+    <a href="/">Check another city</a>
+</body>
+</html>

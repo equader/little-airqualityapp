@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Air Quality Index Checker
+    </title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  
+  <body>
+    <header>
+      <h1>
+        Air Quality Index Checker
+      </h1>
+      <p>
+        Get real-time air quality information for your city
+      </p>
+    </header>
+    <div class="container">
+      <form action="/add-city" method="POST">
+        <input type="text" name="city" placeholder="Enter your city" required>
+        <button type="submit">
+          Check Air Quality
+        </button>
+      </form>
+    </div>  
+      <footer>
+        <p>
+          &copy; 2023 Air Quality Index Checker. All rights reserved.
+        </p>
+      </footer>
+      <script src="/script.js">
+      </script>
+  </body>
+
+</html>

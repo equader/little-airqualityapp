@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Results for <%= city %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Air Quality Results for <%= city %></h1>
+        <p>Check the current air quality levels for different pollutants.</p>
+    </header>
+    <div class="container">
+        <% if (data) { %>
+            <div class="aqi-display">
+                <h2>Overall AQI: <%= data.overall_aqi %></h2>
+                <p>The overall Air Quality Index (AQI) is a summary of the pollution levels for the following pollutants:</p>
+                <ul>
+                    <li>CO: <%= data.CO.aqi %> (Concentration: <%= data.CO.concentration %> µg/m³)</li>
+                    <li>NO2: <%= data.NO2.aqi %> (Concentration: <%= data.NO2.concentration %> µg/m³)</li>
+                    <li>O3: <%= data.O3.aqi %> (Concentration: <%= data.O3.concentration %> µg/m³)</li>
+                    <li>SO2: <%= data.SO2.aqi %> (Concentration: <%= data.SO2.concentration %> µg/m³)</li>
+                    <li>PM2.5: <%= data['PM2.5'].aqi %> (Concentration: <%= data['PM2.5'].concentration %> µg/m³)</li>
+                    <li>PM10: <%= data.PM10.aqi %> (Concentration: <%= data.PM10.concentration %> µg/m³)</li>
+                </ul>
+            </div>
+        <% } else { %>
+            <p>Data is not available for the selected city or there was an error fetching the data.</p>
+        <% } %>
+        <a href="/">Check another city</a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Air Quality Index Checker. All rights reserved.</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>
